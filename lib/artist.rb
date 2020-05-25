@@ -1,14 +1,14 @@
+require 'pry'
 
 class Artist
   attr_accessor :name
   attr_reader :songs
-
   extend Memorable::ClassMethods
   include Memorable::InstanceMethods
-  include Paramable::InstanceMethods
-  extend Findable::ClassMethods
+  extend Findable
+  include Paramable
 
-  @@all = []
+  @@artists = []
 
   def initialize
     super
